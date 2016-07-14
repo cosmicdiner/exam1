@@ -27,11 +27,14 @@
 <div class="container">
     <h2>つぶやきクローン</h2>
         <%= link_to "つぶやく", new_tweet_path, class: 'btn btn-default' %> 
-        <% @tweets.each do |tweet| %>
+        <% @tweets.order('id desc').each do |tweet| %>
         <div class="row">
             <p><%= tweet.content %></p>
             <%= link_to "編集する", edit_tweet_path(tweet.id), class: 'btn btn-default btn-sm btn-success' %> 
             <%= link_to "削除する", tweet_path(tweet.id), method: :delete, data: {confirm: 'このつぶやきを本当に削除しますか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
         </div>
         <% end %>
+</div>
+<div id="page-top-btn" class="page-top-btn">
+    <p><a class="move-page-top" id="move-page-top">▲</a></p>
 </div>
