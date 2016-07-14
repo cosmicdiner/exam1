@@ -5,8 +5,8 @@
   </div>
 <% end %>
 
-<%= f.text_field :content %>
+<%= f.text_area :content, class: 'form-control', placeholder:"いまどうしてる？" %>
 <br>
-<%= f.submit "つぶやく" %>
+<%= f.submit "つぶやく", class: 'btn btn-primary btn-block' %>
 <% end %>
 <a href="/tweets">×</a>
