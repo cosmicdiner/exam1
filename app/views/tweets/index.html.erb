@@ -1,0 +1,7 @@
+<h1>つぶやきクローン</h1>
+<%= link_to "つぶやく", new_tweet_path %>
+<% @tweets.each do |tweet| %>
+<p><%= tweet.content %></p>
+<%= link_to "編集する", edit_tweet_path(tweet.id) %>
+<%= link_to "削除する", tweet_path(tweet.id), method: :delete, data:{confirm: 'このつぶやきを本当に削除しますか？'} %>
+<% end %>

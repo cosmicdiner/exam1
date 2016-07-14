@@ -1,0 +1,12 @@
+<%= form_for(@tweet) do |f| %>
+<% if @tweet.errors.any? %>
+  <div id ="error-explanation">
+    <h2>1~255文字の間で入力してください。</h2>
+  </div>
+<% end %>
+
+<%= f.text_field :content %>
+<br>
+<%= f.submit "つぶやく" %>
+<% end %>
+<a href="/tweets">×</a>
